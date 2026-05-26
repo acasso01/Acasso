@@ -53,7 +53,7 @@
           <p>I’m Anthony Casso, an IT support professional with hands on experience across Microsoft 365 environments, documentation, user support, compliance driven workflows, networking, and troubleshooting. This site gives recruiters and hiring managers a clean view of my background, technical work, and practical support experience.</p>
           <div class="actions">
             <a class="btn" href="#proof">See work samples</a>
-            <a class="btn-alt" href="RESUME0526.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
+            <a class="btn-alt" href="RESUME-0526.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
             <a class="btn-alt" href="https://techbgvs.com" target="_blank" rel="noopener noreferrer">Techbgvs.com</a>
           </div>
         </div>
@@ -140,34 +140,38 @@
         <div class="head reveal">
           <h2>Work samples</h2>
           <p>These work samples show a realistic incident flow from ticket queue to description review, Active Directory user lookup, group access updates, and final closure notes.</p>
-        <div class="caption">
-  <strong>Ticket hub view</strong>
-</div>
-          </article>
-
-          <div class="gallery-stack">
-            <!-- Top right: S2 (ticket description) -->
-            <article class="card shot reveal">
-              <img src="S2.png" alt="Ticket description view in ServiceDesk Simulator showing full incident details and business impact." width="1600" height="900" loading="lazy">
-              <div class="caption">
-                <strong>Incident description and impact</strong>
-                <p class="muted">Reviewed the full description, troubleshooting notes, and business impact before making any account changes.</p>
-              </div>
-            </article>
-
-            <!-- Bottom right: S3 (find user in AD) -->
-            <article class="card shot reveal">
-              <img src="S3.png" alt="Active Directory style user view in ServiceDesk Simulator showing user details while handling an access request." width="1600" height="900" loading="lazy">
-              <div class="caption">
-                <strong>User lookup in directory</strong>
-                <p class="muted">Located the correct user account in the directory and confirmed identity before adjusting access.</p>
-              </div>
-            </article>
-          </div>
         </div>
 
-        <div class="proof-grid" style="margin-top:1rem">
-          <!-- Bottom row left: S4 (group membership / role) -->
+        <!-- 2x2 grid: S1–S4 large -->
+        <div class="project-grid">
+          <!-- S1: ticket hub view -->
+          <article class="card shot reveal">
+            <img src="S1.png" alt="Ticket hub view in ServiceDesk Simulator showing an incident selected with available actions and status." width="1600" height="900" loading="lazy">
+            <div class="caption">
+              <strong>Ticket hub view</strong>
+              <p class="muted">Reviewed the ticket hub to see status, priority, and available actions.</p>
+            </div>
+          </article>
+
+          <!-- S2: ticket description -->
+          <article class="card shot reveal">
+            <img src="S2.png" alt="Ticket description view in ServiceDesk Simulator showing full incident details and business impact." width="1600" height="900" loading="lazy">
+            <div class="caption">
+              <strong>Incident description and impact</strong>
+              <p class="muted">Reviewed the full description, troubleshooting notes, and business impact before making any changes.</p>
+            </div>
+          </article>
+
+          <!-- S3: user lookup -->
+          <article class="card shot reveal">
+            <img src="S3.png" alt="Active Directory style user view in ServiceDesk Simulator showing user details while handling an access request." width="1600" height="900" loading="lazy">
+            <div class="caption">
+              <strong>User lookup in directory</strong>
+              <p class="muted">Located the correct user account in the directory and confirmed identity before adjusting access.</p>
+            </div>
+          </article>
+
+          <!-- S4: group membership -->
           <article class="card shot reveal">
             <img src="S4.png" alt="Groups view in ServiceDesk Simulator showing updated group memberships for a user." width="1600" height="900" loading="lazy">
             <div class="caption">
@@ -175,8 +179,11 @@
               <p class="muted">Added the user to the correct management and team groups to give them the access required for the promotion.</p>
             </div>
           </article>
+        </div>
 
-          <!-- Bottom row right: S5 (closure notes) -->
+        <!-- Bottom row: S5 + Techboysgvs -->
+        <div class="proof-grid" style="margin-top:1rem">
+          <!-- S5: closure notes -->
           <article class="card shot reveal">
             <img src="S5.png" alt="Close ticket dialog in ServiceDesk Simulator showing final written resolution notes." width="1600" height="900" loading="lazy">
             <div class="caption">
@@ -195,6 +202,9 @@
               <li>Connects hands on work to a professional brand.</li>
             </ul>
           </article>
+
+          <!-- empty card to balance grid -->
+          <article class="card reveal" style="visibility:hidden;"></article>
         </div>
       </div>
     </section>
