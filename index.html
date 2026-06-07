@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anthony Casso | IT Support Portfolio</title>
-  <meta name="description" content="Anthony Casso IT support portfolio featuring help desk experience, technical projects, support labs, and Techboysgvs consulting work." />
+  <title>Anthony Casso | Work Examples</title>
+  <meta name="description" content="Work examples from Anthony Casso highlighting Active Directory lab work and ServiceDesk Simulator support scenarios." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,6 @@
     .container{width:min(1160px,calc(100% - 2rem));margin-inline:auto}
     .skip{position:absolute;left:-9999px;top:1rem}
     .skip:focus{left:1rem;background:var(--surface);padding:.8rem 1rem;border-radius:var(--r-sm);z-index:50}
-
     .header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
     .nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0}
     .brand{display:flex;align-items:center;gap:.85rem;font-weight:700}
@@ -28,79 +27,54 @@
     .logo svg{width:1.25rem;height:1.25rem}
     .links{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
     .links a{font-size:.95rem;color:var(--muted)}
-    .links a:hover{color:var(--text)}
-
+    .links a:hover,.links a.active{color:var(--text)}
     .toggle,.btn,.btn-alt{min-height:44px;padding:.82rem 1rem;border-radius:999px;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);transition:.18s ease}
     .btn{background:var(--primary);color:var(--inverse);font-weight:600;border-color:transparent}
     .btn:hover{background:var(--primary-deep)}
     .btn-alt,.toggle{background:var(--surface)}
     .btn-alt:hover,.toggle:hover{background:var(--offset)}
-
-    .hero{padding:4.8rem 0 3.6rem}
-    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:2rem;align-items:end}
+    .hero{padding:4.6rem 0 3.3rem}
+    .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:2rem;align-items:end}
     .eyebrow{display:inline-flex;align-items:center;gap:.55rem;padding:.48rem .84rem;border-radius:999px;background:var(--highlight);color:var(--primary);text-transform:uppercase;letter-spacing:.07em;font-size:.78rem;font-weight:700}
-    .hero h1{font-family:var(--font-display);font-size:clamp(2.7rem,5vw,5rem);line-height:1.02;max-width:11ch;margin-top:1rem}
-    .hero p{margin-top:1rem;max-width:63ch;color:var(--muted)}
+    .hero h1{font-family:var(--font-display);font-size:clamp(2.6rem,5vw,4.8rem);line-height:1.02;max-width:10ch;margin-top:1rem}
+    .hero p{margin-top:1rem;max-width:62ch;color:var(--muted)}
     .actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.6rem}
-
     .panel{background:linear-gradient(180deg,var(--surface),var(--surface2));border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--r-xl);box-shadow:var(--shadow)}
     .hero-card{padding:1.35rem;display:grid;gap:1rem}
     .mini{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);font-weight:700}
     .stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
     .stat{padding:1rem;border-radius:var(--r-lg);background:var(--offset);border:1px solid color-mix(in srgb,var(--text) 8%,transparent)}
-    .stat strong{display:block;font-size:1.5rem;line-height:1.1}
+    .stat strong{display:block;font-size:1.15rem;line-height:1.2}
     .stat span{display:block;margin-top:.35rem;color:var(--muted);font-size:.95rem}
-
     section{padding:3.5rem 0}
     .head{display:grid;gap:.8rem;margin-bottom:1.5rem}
     .head h2{font-size:clamp(1.8rem,3vw,2.5rem)}
     .head p{max-width:72ch;color:var(--muted)}
-
-    .about{display:grid;grid-template-columns:1.1fr .9fr;gap:1.25rem}
-    .cards3,.proof-grid,.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .cards3,.project-grid,.two-col{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .two-col{grid-template-columns:1.05fr .95fr}
     .card{background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--r-lg);padding:1.25rem;box-shadow:var(--shadow-sm)}
     .card h3{margin-bottom:.45rem;font-size:1.05rem}
     .card p,.card li{color:var(--muted);font-size:.96rem}
     .card ul{margin-top:.8rem;padding-left:1rem;display:grid;gap:.4rem}
-
-    .timeline{display:grid;gap:1rem}
-    .timeline-item{padding:1.05rem 1.2rem;border-left:2px solid var(--primary);background:var(--surface);border-radius:0 var(--r-lg) var(--r-lg) 0;border:1px solid color-mix(in srgb,var(--text) 8%,transparent);border-left-width:2px}
-    .timeline-item small{display:block;color:var(--faint);margin-bottom:.35rem}
     .tag{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--primary);font-weight:700;margin-bottom:.55rem;display:block}
-
-    .project-card{display:grid;gap:.8rem;align-content:start}
-
-    .resume{background:var(--offset);padding:1.4rem;border-radius:var(--r-lg);border:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
-    .contact{padding:1.5rem;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center}
-
+    .shot{overflow:hidden;padding:0}
+    .shot img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--offset)}
+    .caption{padding:1rem 1.1rem 1.15rem}
+    .caption strong{display:block;margin-bottom:.3rem}
     .footer{padding:2rem 0 3rem;color:var(--faint)}
     .muted{color:var(--muted)}
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s.ease}
     .reveal.visible{opacity:1;transform:none}
-
-    @media (max-width:960px){
-      .hero-grid,.about,.contact,.project-grid,.cards3,.proof-grid{grid-template-columns:1fr}
-      .nav{flex-direction:column;align-items:flex-start}
-      .links{width:100%}
-      .stat-grid{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width:620px){
-      .container{width:min(100% - 1rem,1160px)}
-      .stat-grid{grid-template-columns:1fr}
-      .actions{flex-direction:column}
-      .btn,.btn-alt{display:inline-flex;align-items:center;justify-content:center;width:100%}
-    }
-    @media (prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}
-      .reveal{opacity:1;transform:none;transition:none}
-    }
+    @media (max-width:960px){.hero-grid,.two-col,.cards3,.project-grid{grid-template-columns:1fr}.nav{flex-direction:column;align-items:flex-start}.links{width:100%}.stat-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:620px){.container{width:min(100% - 1rem,1160px)}.stat-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn,.btn-alt{display:inline-flex;align-items:center;justify-content:center;width:100%}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
   </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="header">
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Anthony Casso home">
+      <a class="brand" href="index.html#top" aria-label="Anthony Casso home">
         <span class="logo" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 17 12 6l7 11" />
@@ -111,204 +85,146 @@
         <span>Anthony Casso</span>
       </a>
       <nav class="links" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="work-examples.html">Work Examples</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="work-examples.html" class="active">Work Examples</a>
         <a href="RESUME0526.pdf" download>Resume</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#contact">Contact</a>
         <button class="toggle" data-theme-toggle aria-label="Switch theme">Theme</button>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
+    <section class="hero">
       <div class="container hero-grid">
         <div class="reveal visible">
-          <span class="eyebrow">IT support • help desk • systems coordinator</span>
-          <h1>IT support experience, projects, and proof in one place.</h1>
-          <p>I’m Anthony Casso, an IT support professional with hands-on experience across Microsoft 365 environments, documentation, user support, compliance-driven workflows, networking, and troubleshooting. This site gives recruiters and hiring managers a clear view of my background, technical work, and practical support experience.</p>
+          <span class="eyebrow">Hands-on proof • directory admin • support workflows</span>
+          <h1>Work examples from lab environments.</h1>
+          <p>This page highlights practical examples from a Windows lab environment and support simulations, starting with Active Directory user and group management and followed by a ServiceDesk Simulator ticket scenario.</p>
           <div class="actions">
-            <a class="btn" href="work-examples.html">See work examples</a>
-            <a class="btn-alt" href="RESUME0526.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
-            <a class="btn-alt" href="https://techbgvs.com" target="_blank" rel="noopener noreferrer">Techbgvs.com</a>
+            <a class="btn" href="#active-directory">View Active Directory</a>
+            <a class="btn-alt" href="#ticket-lab">View ticket scenario</a>
+            <a class="btn-alt" href="index.html">Back to homepage</a>
           </div>
         </div>
-        <aside class="panel hero-card reveal visible" aria-label="Portfolio summary">
+        <aside class="panel hero-card reveal.visible" aria-label="Work examples summary">
           <div>
-            <div class="mini">Quick snapshot</div>
-            <p class="muted">Help desk, desktop support, Microsoft 365, ticketing, troubleshooting, documentation, onboarding, and networking fundamentals.</p>
+            <div class="mini">Areas of focus</div>
+            <p class="muted">Identity and access administration, directory management, ticket handling, and closure documentation.</p>
           </div>
           <div class="stat-grid">
-            <div class="stat"><strong>4+ years</strong><span>Operations, support, and IT-related experience</span></div>
-            <div class="stat"><strong>AD lab</strong><span>Hands-on user and group management examples</span></div>
-            <div class="stat"><strong>B.S. IT</strong><span>Completed with M.S. in progress</span></div>
-            <div class="stat"><strong>Network+</strong><span>Currently in progress</span></div>
+            <div class="stat"><strong>Active Directory</strong><span>User and group management in a Windows lab.</span></div>
+            <div class="stat"><strong>Identity workflows</strong><span>Account creation and security group assignment.</span></div>
+            <div class="stat"><strong>Ticketing</strong><span>Queue review, user verification, and closure notes.</span></div>
+            <div class="stat"><strong>Support focus</strong><span>Practical examples aligned with help desk work.</span></div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section id="about">
-      <div class="container about">
-        <div>
-          <div class="head reveal">
-            <h2>Profile</h2>
-            <p>I am pursuing help desk, desktop support, and IT coordinator opportunities where communication, technical troubleshooting, user support, and reliable follow-through matter. My background combines professional operations experience, hands-on technical work through Techboysgvs, and practical lab-based learning.</p>
-          </div>
-          <div class="cards3">
-            <article class="card reveal">
-              <h3>Support mindset</h3>
-              <p>Focused on issue ownership, clean documentation, user communication, escalation judgment, and dependable ticket follow-through.</p>
-            </article>
-            <article class="card reveal">
-              <h3>Technical foundation</h3>
-              <p>Microsoft 365, Windows support, ticketing, TCP/IP concepts, documentation, hardware troubleshooting, and network fundamentals.</p>
-            </article>
-            <article class="card reveal">
-              <h3>Independent initiative</h3>
-              <p>Built portfolio proof through Active Directory lab work, support projects, labs, and independent consulting under the Techboysgvs brand.</p>
-            </article>
-          </div>
-        </div>
-        <div class="timeline reveal">
-          <div class="timeline-item">
-            <small>Current</small>
-            <strong>Techboysgvs LLC</strong>
-            <p>Owner and IT network consultant supporting home and small business networking, device setup, wireless improvement, and technical troubleshooting.</p>
-          </div>
-          <div class="timeline-item">
-            <small>Previous</small>
-            <strong>Aspen Dental</strong>
-            <p>Office Manager and IT Coordinator supporting EPMS3 workflows, desktop and printer issues, network troubleshooting, cabling, onboarding, and HIPAA-aligned processes.</p>
-          </div>
-          <div class="timeline-item">
-            <small>Foundation</small>
-            <strong>Verizon</strong>
-            <p>Built communication, training, escalation handling, performance tracking, and operational coordination skills in a high-volume environment.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
+    <section id="active-directory">
       <div class="container">
         <div class="head reveal">
-          <h2>Projects and experience</h2>
-          <p>A focused mix of technical support experience, independent consulting, and practical project work that reflects the kind of value I can bring to an IT support team.</p>
+          <h2>Active Directory lab work</h2>
+          <p>These examples come from a Windows-based Active Directory lab and show user account management, security group assignment, and directory review using Active Directory Users and Computers.</p>
         </div>
-        <div class="project-grid">
-          <article class="card project-card reveal">
-            <span class="tag">Experience</span>
-            <h3>Techboysgvs LLC</h3>
-            <p>Provide IT and network support for home and small business clients, including secure wired and wireless setup, routers, access points, device troubleshooting, updates, and basic security guidance.</p>
-            <ul>
-              <li>Set up secure wired and wireless networks for clients.</li>
-              <li>Configured routers, access points, switches, and remote access.</li>
-              <li>Troubleshot printers, computers, TVs, cameras, and smart devices.</li>
-            </ul>
-            <a class="btn-alt" href="https://techbgvs.com" target="_blank" rel="noopener noreferrer" style="justify-self:start">Visit Techbgvs.com</a>
+
+        <div class="project-grid" style="grid-template-columns:1fr;">
+          <article class="card shot reveal">
+            <img src="ADUSERCREATE.png" alt="Creating a new user account in Active Directory Users and Computers." width="1600" height="900" loading="lazy">
+            <div class="caption">
+              <strong>User account creation</strong>
+              <p class="muted">Created a new user account in Active Directory Users and Computers and configured password options as part of a standard provisioning workflow.</p>
+            </div>
           </article>
 
-          <article class="card project-card reveal">
-            <span class="tag">Lab</span>
-            <h3>FreeScout help desk lab</h3>
-            <p>Built a local help desk lab using Docker Compose and MySQL on macOS to practice ticket intake, assignment, updates, internal notes, and closure in a structured support environment.</p>
-            <ul>
-              <li>Deployed a working local support platform in containers.</li>
-              <li>Practiced realistic ticket workflow in a controlled lab.</li>
-              <li>Created interview-ready examples from hands-on setup work.</li>
-            </ul>
+          <article class="card shot reveal">
+            <img src="ADGROUPASSIGN.png" alt="Adding a user to a security group in Active Directory using the Select Groups window." width="1600" height="900" loading="lazy">
+            <div class="caption">
+              <strong>Security group assignment</strong>
+              <p class="muted">Assigned a user to the appropriate security group to align access with role requirements and demonstrate group-based access control.</p>
+            </div>
           </article>
 
-          <article class="card project-card reveal">
-            <span class="tag">Directory lab</span>
-            <h3>Active Directory lab work</h3>
-            <p>Built hands-on portfolio examples around Windows-based Active Directory tasks including user creation, group assignment, and access-related administrative work.</p>
-            <ul>
-              <li>Worked with user and group management in ADUC.</li>
-              <li>Captured screenshots for the dedicated work examples page.</li>
-              <li>Prepared the portfolio to expand with additional support scenarios.</li>
-            </ul>
-            <a class="btn-alt" href="work-examples.html" style="justify-self:start">Open examples page</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="proof">
-      <div class="container">
-        <div class="head reveal">
-          <h2>Work examples</h2>
-          <p>Detailed screenshots and lab notes are available on a dedicated page so hiring teams can review hands-on work in a focused format.</p>
-        </div>
-        <div class="proof-grid">
-          <article class="card reveal">
-            <span class="tag">Portfolio proof</span>
-            <h3>Active Directory first</h3>
-            <p>The work examples page leads with Windows Active Directory lab tasks including user administration and group-based access management.</p>
-          </article>
-          <article class="card reveal">
-            <span class="tag">Support scenarios</span>
-            <h3>Ticket and access workflow</h3>
-            <p>The second proof area shows a ServiceDesk Simulator scenario that combines ticket handling, user review, group assignment, and closure notes.</p>
-          </article>
-          <article class="card reveal">
-            <span class="tag">Navigation</span>
-            <h3>Dedicated examples page</h3>
-            <p>Use the Work Examples link in the navigation or the main call-to-action button to open the dedicated examples page.</p>
-            <div class="actions" style="margin-top:1rem">
-              <a class="btn" href="work-examples.html">Go to work examples</a>
+          <article class="card shot reveal">
+            <img src="ADGROUPCREATION.png" alt="Viewing groups and organizational structure in Active Directory Users and Computers." width="1600" height="900" loading="lazy">
+            <div class="caption">
+              <strong>Directory and group review</strong>
+              <p class="muted">Reviewed domain groups and related objects in Active Directory Users and Computers to confirm available groups and verify directory structure.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="resume">
-      <div class="container">
-        <div class="head reveal">
-          <h2>Resume highlights</h2>
-          <p>Key experience highlights across IT support, systems coordination, user support, and technical troubleshooting.</p>
-        </div>
-        <div class="resume reveal">
-          <p><strong>Profile</strong><br>IT support professional with 4+ years of hands-on experience in Microsoft 365 environments, data management, documentation, and compliance-driven workflows. Completed a B.S. in Information Technology with a Master’s in progress and CompTIA Network+ underway.</p>
-          <br>
-          <p><strong>Techboysgvs LLC — Owner | IT and Network Consultant</strong><br>Set up secure wired and wireless networks for home and small business clients, including routers, firewalls, network segmentation, secure remote access, device support, and security-focused guidance for updates and backups.</p>
-          <br>
-          <p><strong>Aspen Dental — Office Manager / IT Coordinator</strong><br>Supported and troubleshot Aspen Dental’s proprietary EPMS3 system, performed network troubleshooting including switch resets and port identification, diagnosed hardware issues on desktop towers and printers, ran Ethernet cabling, and managed onboarding in Active Directory.</p>
-          <br>
-          <p><strong>Verizon — Sales Manager</strong><br>Tracked team performance metrics, trained and onboarded staff on systems and processes, resolved escalations, managed daily workflows, and maintained accurate records across business and B2B accounts.</p>
-          <br>
-          <p><strong>Full resume</strong><br>You can download or open the full resume as a PDF using the navigation bar or the buttons on this page.</p>
-        </div>
+    <section>
+      <div class="container two-col">
+        <article class="card reveal">
+          <span class="tag">Focus areas</span>
+          <h3>Directory skills</h3>
+          <p>These examples highlight core directory administration skills that support everyday IT work.</p>
+          <ul>
+            <li>User provisioning and basic account configuration.</li>
+            <li>Security group membership management.</li>
+            <li>Navigation of Active Directory Users and Computers.</li>
+            <li>Attention to role-appropriate access and structure.</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <span class="tag">Support workflow</span>
+          <h3>Ticket handling</h3>
+          <p>The ServiceDesk Simulator scenario captures how ticket handling and directory work come together in one incident.</p>
+          <ul>
+            <li>Evaluating ticket priority and business impact.</li>
+            <li>Confirming user identity and current access.</li>
+            <li>Applying access changes through group updates.</li>
+            <li>Documenting work and closing tickets cleanly.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="ticket-lab">
       <div class="container">
-        <div class="panel contact reveal">
-          <div>
-            <div class="mini">Contact</div>
-            <h2 style="margin-top:.45rem">Anthony Casso</h2>
-            <p class="muted" style="margin-top:.7rem">
-              520 260 9396<br>
-              Anthonyaldom@gmail.com<br>
-              Tucson, Arizona<br>
-              Portfolio:
-              <a href="https://acasso01.github.io/Acasso/" target="_blank" rel="noopener noreferrer">
-                acasso01.github.io/Acasso/
-              </a><br>
-              LinkedIn:
-              <a href="https://linkedin.com/in/acasso01" target="_blank" rel="noopener noreferrer">
-                linkedin.com/in/acasso01
-              </a>
-            </p>
-          </div>
-          <div class="actions">
-            <a class="btn" href="RESUME0526.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
-            <a class="btn-alt" href="https://techbgvs.com" target="_blank" rel="noopener noreferrer">Techbgvs.com</a>
-          </div>
+        <div class="head reveal">
+          <h2>ServiceDesk Simulator scenario</h2>
+          <p>This scenario walks through an incident in ServiceDesk Simulator, from ticket queue to user review in an Active Directory-style view, group assignment, and final closure notes.</p>
+        </div>
+
+        <div class="project-grid" style="grid-template-columns:1fr;">
+          <article class="card shot reveal">
+            <img src="TICKETHUB.png" alt="ServiceDesk Simulator ticket hub showing multiple incidents in the queue." width="1600" height="900" loading="lazy">
+            <div class="caption">
+              <strong>Ticket queue and intake</strong>
+              <p class="muted">Reviewed the ticket hub and identified a high-priority incident where a new department head needed the same access as the previous manager.</p>
+            </div>
+          </article>
+
+          <article class="card shot reveal">
+            <img src="USERVIEWACCESS.png" alt="ServiceDesk Simulator incident view with user profile details displayed alongside the ticket." width="1600" height="900" loading="lazy">
+            <div class="caption">
+              <strong>User profile and access review</strong>
+              <p class="muted">Opened the incident and used the user view to confirm the employee’s identity, department, and existing access before making any changes.</p>
+            </div>
+          </article>
+
+          <article class="card shot reveal">
+            <img src="ASSIGNGROUP.png" alt="ServiceDesk Simulator view showing user group memberships and management group assignment." width="1600" height="900" loading="lazy">
+            <div class="caption">
+              <strong>Group assignment for promotion</strong>
+              <p class="muted">Added the user to the appropriate management group so they could approve budget reports, purchase requests, and manage their team.</p>
+            </div>
+          </article>
+
+          <article class="card shot reveal">
+            <img src="CLOSING-TICKET-DOCUMENTATION.png" alt="ServiceDesk Simulator close ticket dialog showing final resolution notes." width="1600" height="900" loading="lazy">
+            <div class="caption">
+              <strong>Resolution notes and closure</strong>
+              <p class="muted">Documented the change and closed the ticket with clear resolution notes describing why access was updated and how the request was resolved.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -316,7 +232,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>Anthony Casso • IT Support • Help Desk • Systems Coordinator</p>
+      <p>Anthony Casso • Work Examples</p>
     </div>
   </footer>
 
