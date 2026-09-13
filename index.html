@@ -1,360 +1,49 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!doctype html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anthony Casso | IT Support & Systems Coordinator</title>
-  <meta name="description" content="Anthony Casso – IT support professional based in Tucson, AZ. Help desk, systems coordination, Microsoft 365, Active Directory, HIPAA compliance." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root,[data-theme="light"]{--bg:#f7f6f2;--surface:#f9f8f5;--surface2:#fbfbf9;--offset:#f1eee8;--border:#d6d2ca;--text:#28251d;--muted:#6e6a62;--faint:#918d84;--inverse:#f8f8f4;--primary:#0f6972;--primary-deep:#0d4f57;--highlight:#d4e5e2;--shadow:0 12px 36px rgba(22,20,18,.08);--shadow-sm:0 4px 16px rgba(22,20,18,.06);--r-sm:.65rem;--r-md:1rem;--r-lg:1.3rem;--r-xl:1.75rem;--font-body:'Inter',system-ui,sans-serif;--font-display:'Instrument Serif',Georgia,serif}
-    [data-theme="dark"]{--bg:#141311;--surface:#1c1b19;--surface2:#23211f;--offset:#292724;--border:#393530;--text:#ece6dd;--muted:#b5aea1;--faint:#847d71;--inverse:#181715;--primary:#5eacb5;--primary-deep:#8bc8cf;--highlight:#21383b;--shadow:0 18px 48px rgba(0,0,0,.34);--shadow-sm:0 8px 24px rgba(0,0,0,.22)}
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
-    img{display:block;max-width:100%;height:auto}
-    a{text-decoration:none;color:inherit}
-    button{font:inherit;border:none;background:none;color:inherit;cursor:pointer}
-    .container{width:min(1160px,calc(100% - 2rem));margin-inline:auto}
-    .skip{position:absolute;left:-9999px;top:1rem}
-    .skip:focus{left:1rem;background:var(--surface);padding:.8rem 1rem;border-radius:var(--r-sm);z-index:50}
-
-    /* NAV */
-    .header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0}
-    .brand{display:flex;align-items:center;gap:.85rem;font-weight:700}
-    .logo{width:2.5rem;height:2.5rem;border-radius:.85rem;background:linear-gradient(135deg,var(--primary),#80bac2);display:grid;place-items:center;color:white;box-shadow:var(--shadow-sm)}
-    .logo svg{width:1.25rem;height:1.25rem}
-    .links{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
-    .links a{font-size:.95rem;color:var(--muted)}
-    .links a:hover,.links a.active{color:var(--text)}
-    .toggle,.btn,.btn-alt{min-height:44px;padding:.82rem 1rem;border-radius:999px;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);transition:.18s ease}
-    .btn{background:var(--primary);color:var(--inverse);font-weight:600;border-color:transparent}
-    .btn:hover{background:var(--primary-deep)}
-    .btn-alt,.toggle{background:var(--surface)}
-    .btn-alt:hover,.toggle:hover{background:var(--offset)}
-
-    /* HERO */
-    .hero{padding:4.6rem 0 3.3rem}
-    .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:2rem;align-items:end}
-    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;padding:.48rem .84rem;border-radius:999px;background:var(--highlight);color:var(--primary);text-transform:uppercase;letter-spacing:.07em;font-size:.78rem;font-weight:700}
-    .hero h1{font-family:var(--font-display);font-size:clamp(2.6rem,5vw,4.8rem);line-height:1.02;max-width:10ch;margin-top:1rem}
-    .hero p{margin-top:1rem;max-width:62ch;color:var(--muted)}
-    .actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.6rem}
-    .panel{background:linear-gradient(180deg,var(--surface),var(--surface2));border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--r-xl);box-shadow:var(--shadow)}
-    .hero-card{padding:1.35rem;display:grid;gap:1rem}
-    .mini{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);font-weight:700}
-    .stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-    .stat{padding:1rem;border-radius:var(--r-lg);background:var(--offset);border:1px solid color-mix(in srgb,var(--text) 8%,transparent)}
-    .stat strong{display:block;font-size:1.15rem;line-height:1.2}
-    .stat span{display:block;margin-top:.35rem;color:var(--muted);font-size:.95rem}
-
-    /* SECTIONS */
-    section{padding:3.5rem 0}
-    .head{display:grid;gap:.8rem;margin-bottom:1.8rem}
-    .head h2{font-size:clamp(1.8rem,3vw,2.5rem)}
-    .head p{max-width:72ch;color:var(--muted)}
-    .cards3,.two-col{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-    .two-col{grid-template-columns:1.05fr .95fr}
-    .card{background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--r-lg);padding:1.25rem;box-shadow:var(--shadow-sm)}
-    .card h3{margin-bottom:.45rem;font-size:1.05rem}
-    .card p,.card li{color:var(--muted);font-size:.96rem}
-    .card ul{margin-top:.8rem;padding-left:1rem;display:grid;gap:.4rem}
-    .tag{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--primary);font-weight:700;margin-bottom:.55rem;display:block}
-    .muted{color:var(--muted)}
-
-    /* ABOUT */
-    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:start}
-    .about-body{display:grid;gap:1rem}
-    .about-body p{color:var(--muted);font-size:1rem;line-height:1.7}
-    .about-body p strong{color:var(--text)}
-    .skills-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
-    .skill-pill{font-size:.8rem;font-weight:600;padding:.3rem .75rem;border-radius:999px;background:var(--offset);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);color:var(--text)}
-
-    /* CONTACT */
-    .contact-section{background:linear-gradient(180deg,var(--surface),var(--surface2));border-top:1px solid color-mix(in srgb,var(--text) 8%,transparent);border-bottom:1px solid color-mix(in srgb,var(--text) 8%,transparent)}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-    .contact-info{display:grid;gap:1.1rem}
-    .contact-item{display:flex;align-items:center;gap:.85rem}
-    .contact-icon{width:2.4rem;height:2.4rem;border-radius:var(--r-md);background:var(--highlight);display:grid;place-items:center;flex-shrink:0}
-    .contact-icon svg{width:1.1rem;height:1.1rem;stroke:var(--primary)}
-    .contact-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);font-weight:700;display:block;margin-bottom:.15rem}
-    .contact-value{font-size:.97rem;color:var(--text);font-weight:500}
-    .contact-value a{color:var(--primary)}
-    .contact-value a:hover{color:var(--primary-deep);text-decoration:underline}
-
-    /* FOOTER */
-    .footer{padding:2rem 0 3rem;color:var(--faint)}
-
-    /* REVEAL */
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
-    .reveal.visible{opacity:1;transform:none}
-
-    /* RESPONSIVE */
-    @media (max-width:960px){
-      .hero-grid,.about-grid,.two-col,.cards3,.contact-grid{grid-template-columns:1fr}
-      .nav{flex-direction:column;align-items:flex-start}
-      .links{width:100%}
-      .stat-grid{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width:620px){
-      .container{width:min(100% - 1rem,1160px)}
-      .stat-grid{grid-template-columns:1fr}
-      .actions{flex-direction:column}
-      .btn,.btn-alt{display:inline-flex;align-items:center;justify-content:center;width:100%}
-    }
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
-  </style>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anthony Casso | IT Systems &amp; Network Infrastructure</title>
+  <meta name="description" content="Anthony Casso, IT Support Specialist in Tucson. Campus IT support, Active Directory, Azure, Intune, Juniper Mist, and documented hands-on lab work.">
+  <meta name="theme-color" content="#091221"><link rel="stylesheet" href="styles.css"><script src="site.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <header class="header" id="top">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Anthony Casso home">
-        <span class="logo" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 17 12 6l7 11" />
-            <path d="M8.5 12.5h7" />
-            <path d="M10.5 16h3" />
-          </svg>
-        </span>
-        <span>Anthony Casso</span>
-      </a>
-      <nav class="links" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="work-examples.html">Work Examples</a>
-        <a href="RESUME0526.pdf" download>Resume</a>
-        <a href="#contact">Contact</a>
-        <button class="toggle" data-theme-toggle aria-label="Switch theme">Theme</button>
-      </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header" id="top"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="Anthony Casso home"><span class="logo" aria-hidden="true">AC</span>Anthony Casso</a>
+  <nav class="links" aria-label="Primary"><a href="#current-work">Current work</a><a href="work-examples.html">Work examples</a><a href="#about">About</a><a href="#contact">Contact</a><button class="toggle" data-theme-toggle aria-label="Switch to light mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button></nav>
+</div></header>
+<main id="main">
+  <section class="hero"><div class="container hero-grid">
+    <div><p class="eyebrow">IT systems &amp; network infrastructure</p><h1>Keeping people<br>&amp; systems <em>connected.</em></h1><p class="hero-intro">I’m Anthony Casso, an <strong>IT Support Specialist</strong> in Tucson. I support the endpoints, accounts, and network connections that a busy campus depends on every day.</p><div class="actions"><a class="btn" href="#current-work">Explore my work <span aria-hidden="true">↓</span></a><a class="btn btn-alt" href="Anthony-Casso-Resume.pdf" download>Download résumé</a></div><p class="hero-note">Campus IT · Small-business consulting · Hands-on labs</p></div>
+    <aside class="scope" aria-label="Current role and campus size"><p class="section-kicker">Current role / May 2026–present</p><h2>Mather Splendido</h2><p class="role">IT Support Specialist · Sole on-site IT technician</p><div class="scope-grid"><div class="metric"><strong>200+</strong><span>employees on campus</span></div><div class="metric"><strong>400+</strong><span>residents on campus</span></div></div><p class="scope-bottom"><strong>From a user account to a network port.</strong><br>Daily support, endpoint deployment, connectivity troubleshooting, and vendor coordination.</p></aside>
+  </div></section>
+  <div class="tech-strip"><div class="container"><ul class="tech-list" aria-label="Technologies I work with"><li>Hands-on with</li><li>Active Directory</li><li>Microsoft Azure</li><li>Intune</li><li>Microsoft 365</li><li>Juniper Mist</li><li>Windows 10/11</li></ul></div></div>
+  <section class="section" id="current-work"><div class="container">
+    <div class="section-head"><div><p class="section-kicker">01 / Professional experience</p><h2>IT with day-to-day ownership.</h2></div><p>At Splendido, my work connects staff support, endpoint administration, and campus infrastructure.</p></div>
+    <div class="work-grid">
+      <article class="work-card"><span class="card-number">01 — SYSTEMS</span><h3>Accounts &amp; endpoints</h3><p>Administer Active Directory user accounts and support Azure- and Intune-managed staff devices. Deploy and troubleshoot laptops, desktops, printers, and peripherals.</p><div class="tools">Active Directory · Azure · Intune · Windows</div></article>
+      <article class="work-card"><span class="card-number">02 — NETWORKS</span><h3>Campus connectivity</h3><p>Configure and troubleshoot Juniper Mist access points, Ethernet switches, and switch ports. Reconfigure voice ports for data connectivity to meet workstation needs.</p><div class="tools">Juniper Mist · Switching · Wi-Fi · VoIP</div></article>
+      <article class="work-card"><span class="card-number">03 — OPERATIONS</span><h3>Support through resolution</h3><p>Diagnose hardware, software, and connectivity issues. Coordinate network, telecom, and equipment vendors while tracking IT inventory and equipment lifecycle.</p><div class="tools">Troubleshooting · Deployment · Vendor coordination</div></article>
     </div>
-  </header>
-
-  <main id="main">
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="reveal visible">
-          <span class="eyebrow">IT Support · Help Desk · Systems Coordinator</span>
-          <h1>IT professional ready to help.</h1>
-          <p>4+ years supporting Microsoft 365 environments, Active Directory, network infrastructure, and compliance-driven workflows. Based in Tucson, AZ — currently available for help desk, desktop support, and IT coordinator roles.</p>
-          <div class="actions">
-            <a class="btn" href="#about">About me</a>
-            <a class="btn-alt" href="work-examples.html">Work Examples</a>
-            <a class="btn-alt" href="RESUME0526.pdf" download>Download Resume</a>
-          </div>
-        </div>
-        <aside class="panel hero-card reveal visible" aria-label="Quick stats">
-          <div>
-            <div class="mini">At a glance</div>
-            <p class="muted">Systems coordination, identity management, user support, and HIPAA-compliant workflows across multi-site environments.</p>
-          </div>
-          <div class="stat-grid">
-            <div class="stat"><strong>4+ Years</strong><span>Hands-on IT &amp; M365 support experience.</span></div>
-            <div class="stat"><strong>B.S. IT</strong><span>Cybersecurity concentration, Capella University.</span></div>
-            <div class="stat"><strong>Network+</strong><span>CompTIA certification in progress.</span></div>
-            <div class="stat"><strong>Tucson, AZ</strong><span>Available locally and remotely.</span></div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="container">
-        <div class="head reveal">
-          <h2>About Anthony Casso</h2>
-          <p>IT support professional with a passion for keeping systems running and people productive.</p>
-        </div>
-        <div class="about-grid">
-          <div class="about-body reveal">
-            <p>Hi, I'm <strong>Anthony Casso</strong> — an IT support and systems coordination professional based in <strong>Tucson, Arizona</strong>. I have over four years of hands-on experience supporting Microsoft 365 environments, managing Active Directory accounts and permissions, troubleshooting network infrastructure, and maintaining HIPAA compliance in a regulated healthcare setting.</p>
-            <p>Most recently I served as <strong>Office Manager and IT Coordinator at Aspen Dental</strong>, where I was the on-site point of contact for system issues across multiple locations — handling everything from new hire onboarding in Active Directory and M365 to switch resets, Ethernet cabling, and vendor escalations.</p>
-            <p>I also run <strong>TechBoys GVS</strong>, a local tech support business serving the Southern Arizona community, where I help home and small business clients with networking, device troubleshooting, and security setup.</p>
-            <p>I hold a <strong>B.S. in Information Technology (Cybersecurity)</strong> from Capella University, am currently pursuing my M.S. in IT, and am working toward my <strong>CompTIA Network+</strong> certification. I'm actively looking for help desk, desktop support, or IT coordinator opportunities where I can bring real-world experience and a get-it-done attitude.</p>
-            <div class="skills-list">
-              <span class="skill-pill">Microsoft 365</span>
-              <span class="skill-pill">Active Directory</span>
-              <span class="skill-pill">Windows OS</span>
-              <span class="skill-pill">HIPAA Compliance</span>
-              <span class="skill-pill">Network Troubleshooting</span>
-              <span class="skill-pill">TCP/IP</span>
-              <span class="skill-pill">Help Desk Support</span>
-              <span class="skill-pill">User Onboarding</span>
-              <span class="skill-pill">SharePoint</span>
-              <span class="skill-pill">Teams</span>
-              <span class="skill-pill">Documentation</span>
-              <span class="skill-pill">Ticketing Systems</span>
-            </div>
-          </div>
-          <div class="reveal">
-            <div class="panel hero-card">
-              <div class="mini">Experience highlights</div>
-              <div class="stat"><strong>Aspen Dental</strong><span>Office Manager / IT Coordinator — M365, Active Directory, Cisco Meraki, HIPAA, multi-site support.</span></div>
-              <div class="stat"><strong> GVS</strong><span>Owner — SOHO networking, device support, security setup for home and small business clients.</span></div>
-              <div class="stat"><strong>Verizon</strong><span>Sales Manager — systems training, team ops, performance tracking, escalation resolution.</span></div>
-              <div style="margin-top:.5rem">
-                <a class="btn" href="RESUME0526.pdf" download style="display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                  Download Resume
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS CARDS -->
-    <section>
-      <div class="container">
-        <div class="head reveal">
-          <h2>What I bring</h2>
-          <p>Core competencies built through real-world support work across healthcare, retail, and small business environments.</p>
-        </div>
-        <div class="cards3 reveal">
-          <article class="card">
-            <span class="tag">Identity &amp; Access</span>
-            <h3>Active Directory &amp; M365</h3>
-            <p>User provisioning, group policy, permission management, and onboarding workflows across Microsoft environments.</p>
-          </article>
-          <article class="card">
-            <span class="tag">Infrastructure</span>
-            <h3>Network &amp; Hardware</h3>
-            <p>Switch troubleshooting, port identification, cabling, router/firewall configuration, and workstation support.</p>
-          </article>
-          <article class="card">
-            <span class="tag">Compliance</span>
-            <h3>HIPAA &amp; Documentation</h3>
-            <p>Data handling standards, audit-ready documentation, and compliance workflows in a regulated healthcare setting.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <div class="head reveal">
-          <h2>Get in touch</h2>
-          <p>Open to help desk, desktop support, IT coordinator, and systems roles. Feel free to reach out directly.</p>
-        </div>
-        <div class="contact-grid reveal">
-          <div class="contact-info">
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
-              <div>
-                <span class="contact-label">Phone</span>
-                <div class="contact-value"><a href="tel:5202609396">520-260-9396</a></div>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              </div>
-              <div>
-                <span class="contact-label">Email</span>
-                <div class="contact-value"><a href="mailto:Anthonyaldom@gmail.com">Anthonyaldom@gmail.com</a></div>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <span class="contact-label">Location</span>
-                <div class="contact-value">Tucson, Arizona</div>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </div>
-              <div>
-                <span class="contact-label">LinkedIn</span>
-                <div class="contact-value"><a href="https://linkedin.com/in/acasso01" target="_blank" rel="noopener">linkedin.com/in/acasso01</a></div>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-              </div>
-              <div>
-                <span class="contact-label">GitHub / Portfolio</span>
-                <div class="contact-value"><a href="https://acasso01.github.io/" target="_blank" rel="noopener">acasso01.github.io</a></div>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
-              </div>
-              <div>
-                <span class="contact-label">Business</span>
-                <div class="contact-value"><a href="https://techbgvs.com" target="_blank" rel="noopener">Techbgvs.com</a> — Local IT Support</div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="panel hero-card reveal">
-            <div class="mini">Currently seeking</div>
-            <div class="stat"><strong>Help Desk / Desktop Support</strong><span>Tier 1–2 support, end user troubleshooting, M365 environments.</span></div>
-            <div class="stat"><strong>IT Coordinator</strong><span>Systems coordination, onboarding, compliance, multi-site support.</span></div>
-            <div class="stat"><strong>Systems / Network Support</strong><span>Active Directory, infrastructure, connectivity, documentation.</span></div>
-            <div style="margin-top:.5rem">
-              <a class="btn" href="RESUME0526.pdf" download style="display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download Resume
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem">
-      <p>© 2026 Anthony Casso · Tucson, AZ</p>
-      <p><a href="mailto:Anthonyaldom@gmail.com" style="color:var(--faint)">Anthonyaldom@gmail.com</a></p>
+    <p class="responsibility"><strong>Independent consulting</strong>Through Techboysgvs LLC, I also design and troubleshoot home and small-business networks, including firewalls, segmentation, secure remote access, and endpoint security.</p>
+  </div></section>
+  <section class="section samples-section" id="projects"><div class="container">
+    <div class="section-head"><div><p class="section-kicker">02 / Documented practice</p><h2>A closer look at the work.</h2></div><p>Windows lab exercises and a support simulation, with screenshots of the actual steps.</p></div>
+    <div class="samples-grid">
+      <a class="sample" href="work-examples.html#active-directory"><div class="sample-image"><img src="ADUSERCREATE.png" alt="User creation in Anthony’s Active Directory Windows lab" width="3420" height="2224" loading="lazy"></div><div class="sample-copy"><span class="meta">WINDOWS LAB / 3 SCREENSHOTS</span><h3>Identity &amp; access administration</h3><p>Account creation, security group assignment, and directory review in Active Directory Users and Computers.</p><span class="text-link">Explore the lab</span></div></a>
+      <a class="sample" href="work-examples.html#ticket-lab"><div class="sample-image"><img src="TICKETHUB.png" alt="ServiceDesk Simulator queue containing the access request scenario" width="3420" height="1964" loading="lazy"></div><div class="sample-copy"><span class="meta">SUPPORT SIMULATION / 4 SCREENSHOTS</span><h3>From access request to resolution</h3><p>A ticket workflow covering user review, group membership updates, and clear closure documentation.</p><span class="text-link">Follow the scenario</span></div></a>
     </div>
-  </footer>
-
-  <script>
-    (function(){
-      const toggle = document.querySelector('[data-theme-toggle]');
-      const root = document.documentElement;
-      let mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', mode);
-      const sync = () => toggle.textContent = mode === 'dark' ? 'Light mode' : 'Dark mode';
-      sync();
-      toggle.addEventListener('click', () => {
-        mode = mode === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', mode);
-        sync();
-      });
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, {threshold:.14});
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    })();
-  </script>
-</body>
-</html>
+  </div></section>
+  <section class="section" id="about"><div class="container about-layout">
+    <div class="about-copy"><p class="section-kicker">03 / Background</p><h2>Technical work.<br>A people-first approach.</h2><p>My background combines IT support, healthcare operations, and small-business consulting. I understand how a technical issue affects someone’s work—and the value of explaining the fix clearly.</p><p>Based in Tucson, I’m focused on systems administration and network infrastructure opportunities where I can bring practical troubleshooting and ownership.</p><div class="education"><div><strong>B.S. Information Technology</strong><span>Capella University · 2026<br>Information Assurance and Cybersecurity specialization</span></div><div><strong>M.S. Systems Engineering · Enrolled</strong><span>Grand Canyon University · 2026–2028</span></div><div><strong>CompTIA Network+ · In progress</strong><span>Continuing to build my networking foundation.</span></div></div></div>
+    <div class="timeline" aria-label="Experience overview">
+      <article class="timeline-item"><p class="date">May 2026–present</p><h3>Mather Splendido</h3><p class="job">IT Support Specialist</p><p>Sole on-site campus IT support, endpoint deployments, account administration, and network troubleshooting.</p></article>
+      <article class="timeline-item"><p class="date">March 2023–present · Part-time</p><h3>Techboysgvs LLC</h3><p class="job">Owner / IT &amp; Network Consultant</p><p>Wired and wireless networks, security configurations, and device support for residential and small-business clients.</p></article>
+      <article class="timeline-item"><p class="date">May 2022–April 2026</p><h3>Aspen Dental</h3><p class="job">Office Manager / IT Coordinator</p><p>Front-line technical support, clinical technology, vendor coordination, and daily healthcare operations.</p></article>
+      <article class="timeline-item"><p class="date">April 2018–May 2022</p><h3>Verizon</h3><p class="job">Sales Manager</p><p>Team leadership, systems training, workflow coordination, and customer escalations.</p></article>
+    </div>
+  </div></section>
+  <section class="contact" id="contact"><div class="container"><div class="contact-inner"><div><p class="section-kicker">Let’s connect</p><h2>Looking for someone who takes ownership?</h2><p>Let’s talk about IT systems, network infrastructure, and support opportunities.</p></div><div class="actions"><a class="btn" href="mailto:Aldoant97@gmail.com">Email Anthony</a><a class="btn btn-alt" href="https://www.linkedin.com/in/acasso01/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></div><div class="contact-details"><a href="mailto:Aldoant97@gmail.com">Aldoant97@gmail.com</a><a href="tel:+15202609396">520-260-9396</a><span>Tucson, Arizona</span><a href="https://techbgvs.com" target="_blank" rel="noopener noreferrer">Techboysgvs LLC</a></div></div></section>
+</main>
+<footer class="footer"><div class="container footer-inner"><span>© 2026 Anthony Casso</span><span><a href="https://github.com/acasso01" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="work-examples.html">Work examples</a></span></div></footer>
+</body></html>
