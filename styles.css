@@ -10,3 +10,6 @@
 .ticket-gallery .shot:first-child{grid-column:auto}.shot figcaption .text-link{display:inline-block;margin-top:.9rem}
 
 .scope .metric strong{color:var(--signal)}.work-card:hover{border-color:var(--accent)}.logo{border-color:var(--signal);color:var(--signal)}.network-note{border-left-color:var(--signal)}
+
+/* Keep the résumé accessible from every page and screen size. */
+.links{flex-wrap:wrap}.links .nav-resume{display:inline-flex;align-items:center;min-height:44px;padding:.45rem .85rem;border-radius:5px;background:var(--accent);color:var(--bg);font-weight:650;white-space:nowrap}.links .nav-resume:hover{background:var(--signal);color:var(--bg)}
