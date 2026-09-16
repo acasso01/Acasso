@@ -13,3 +13,15 @@
 
 /* Keep the résumé accessible from every page and screen size. */
 .links{flex-wrap:wrap}.links .nav-resume{display:inline-flex;align-items:center;min-height:44px;padding:.45rem .85rem;border-radius:5px;background:var(--accent);color:var(--bg);font-weight:650;white-space:nowrap}.links .nav-resume:hover{background:var(--signal);color:var(--bg)}
+
+/* Professional work examples use the site's existing card and theme system. */
+.operations-section{border-top:1px solid var(--line)}
+.privacy-note{margin:0 0 1.8rem;padding:.9rem 1.1rem;border-left:3px solid var(--signal);background:var(--surface);color:var(--muted);font-size:.875rem;max-width:90ch}
+.operations-image img{aspect-ratio:32/15}
+.operations-gallery .shot:first-child{grid-column:auto}
+.operations-gallery .shot{position:relative;scroll-margin-top:1rem}
+.operations-gallery .shot img{aspect-ratio:32/15;object-fit:contain}
+.evidence-context{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--line)}
+.evidence-context h4{margin:0 0 .4rem;font-size:.9375rem;font-weight:600}
+.evidence-context p{font-size:.9375rem}
+.anchor-target{position:absolute;top:0}
