@@ -24,3 +24,9 @@
 .evidence-context h4{margin:0 0 .4rem;font-size:.9375rem;font-weight:600}
 .evidence-context p{font-size:.9375rem}
 .anchor-target{position:absolute;top:0}
+
+/* Side project photo galleries keep every screenshot fully visible. */
+.side-gallery{margin-top:1.5rem}
+.side-gallery .shot:first-child{grid-column:auto}
+.side-gallery .shot>a{background:var(--raised);padding:.7rem}
+.side-gallery .shot img{aspect-ratio:4/3;object-fit:contain}
