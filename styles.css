@@ -61,3 +61,16 @@
 .links .nav-resume{margin-left:.35rem;box-shadow:0 8px 20px rgba(36,42,70,.18)}
 html{scroll-padding-top:7.5rem}
 @media(max-width:800px){.header{top:.5rem}.nav{border-radius:26px;padding:.8rem;row-gap:.65rem}.links{width:100%;justify-content:flex-start}.links .nav-resume{margin-left:0}html{scroll-padding-top:11rem}}
+
+
+/* Sitewide enforcement: the white/grey-tan theme and floating nav follow every page. */
+body{background:var(--bg);color:var(--text)}
+.page-hero{background:linear-gradient(135deg,var(--bg),var(--hero))}
+.section{background:var(--bg)}
+.samples-section,.contact{background:var(--surface)}
+.footer{background:var(--bg)}
+.header{position:sticky;top:.75rem;z-index:50;background:transparent;border-bottom:0;padding:.25rem 0 .5rem}
+.nav{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:999px;box-shadow:0 14px 38px rgba(36,42,70,.13)}
+.btn,.links a,.links .nav-resume{border-radius:999px}
+.links .nav-resume{padding:.65rem 1.1rem}
+@media(max-width:800px){.header{top:.5rem}.nav{border-radius:26px}}
