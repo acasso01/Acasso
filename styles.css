@@ -86,3 +86,11 @@ body{background:var(--bg);color:var(--text)}
   .links .nav-resume{margin-left:.25rem}
   html{scroll-padding-top:9rem}
 }
+
+
+/* Scroll-reveal transitions (Apple-style fade + rise), activated only when JS is available. */
+.js [data-reveal]{opacity:0;transform:translateY(30px) scale(.995);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)}
+.js [data-reveal].is-visible{opacity:1;transform:none}
+.shot img,.sample-image img{transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.shot:hover img,.sample:hover .sample-image img{transform:scale(1.02)}
+@media(prefers-reduced-motion:reduce){.js [data-reveal]{opacity:1;transform:none;transition:none}.shot img,.sample-image img{transition:none}}
