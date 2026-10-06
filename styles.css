@@ -74,3 +74,15 @@ body{background:var(--bg);color:var(--text)}
 .btn,.links a,.links .nav-resume{border-radius:999px}
 .links .nav-resume{padding:.65rem 1.1rem}
 @media(max-width:800px){.header{top:.5rem}.nav{border-radius:26px}}
+
+
+/* Mobile: one slideable nav row — swipe sideways instead of stacking. */
+@media(max-width:800px){
+  .nav{flex-direction:column;align-items:stretch;flex-wrap:nowrap;border-radius:26px;padding:.65rem .7rem .55rem;gap:.45rem}
+  .brand{padding:.15rem .3rem}
+  .links{display:flex;flex-wrap:nowrap;flex-direction:row;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;width:100%;gap:.25rem;padding:.15rem .15rem .3rem;mask-image:linear-gradient(90deg,#000 90%,transparent)}
+  .links::-webkit-scrollbar{display:none}
+  .links a{flex:0 0 auto;white-space:nowrap}
+  .links .nav-resume{margin-left:.25rem}
+  html{scroll-padding-top:9rem}
+}
