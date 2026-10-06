@@ -99,3 +99,8 @@ body{background:var(--bg);color:var(--text)}
 /* Footer quick actions: Contact link plus a pill Resume button beside it. */
 .footer .footer-resume{display:inline-flex;align-items:center;background:var(--accent);color:#fff;border-radius:999px;padding:.5rem 1rem;margin-left:.7rem;font-weight:600;text-decoration:none;box-shadow:0 8px 20px rgba(36,42,70,.18)}
 .footer .footer-resume:hover{background:var(--signal);color:#fff}
+
+/* Desktop reveal pass: larger screens can show several blocks at once, so the motion is slower and travels farther there. */
+@media(min-width:801px){
+  .js [data-reveal]{transform:translateY(46px) scale(.985);transition-duration:1.15s}
+}

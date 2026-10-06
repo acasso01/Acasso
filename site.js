@@ -28,7 +28,9 @@ window.__revealReady = true;
 
   els.forEach(function (el, i) {
     el.setAttribute('data-reveal', '');
-    el.style.transitionDelay = Math.min((i % 3) * 80, 160) + 'ms';
+    // A slower, clearer sequence makes the reveal easy to see on large desktop screens,
+    // where several blocks can enter the viewport at the same time.
+    el.style.transitionDelay = Math.min(i * 120, 600) + 'ms';
   });
 
   if (!('IntersectionObserver' in window)) {
@@ -43,18 +45,23 @@ window.__revealReady = true;
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  }, { threshold: 0.18, rootMargin: '0px 0px -10% 0px' });
 
-  els.forEach(function (el) { io.observe(el); });
+  // Give the browser one beat to paint the hidden starting state before revealing.
+  window.setTimeout(function () {
+    els.forEach(function (el) { io.observe(el); });
+  }, 160);
 
   // Gentle parallax drift on the giant home-page surname as you scroll.
   var mark = document.querySelector('.hero-watermark');
-  if (mark) {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (mark && !reduceMotion) {
     var ticking = false;
     window.addEventListener('scroll', function () {
       if (!ticking) {
         window.requestAnimationFrame(function () {
-          var y = Math.min(window.scrollY * 0.08, 60);
+          var desktop = window.innerWidth >= 801;
+          var y = Math.min(window.scrollY * (desktop ? 0.16 : 0.08), desktop ? 90 : 60);
           mark.style.transform = 'translateX(-50%) translateY(' + y + 'px)';
           ticking = false;
         });
