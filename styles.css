@@ -94,3 +94,8 @@ body{background:var(--bg);color:var(--text)}
 .shot img,.sample-image img{transition:transform .8s cubic-bezier(.22,1,.36,1)}
 .shot:hover img,.sample:hover .sample-image img{transform:scale(1.02)}
 @media(prefers-reduced-motion:reduce){.js [data-reveal]{opacity:1;transform:none;transition:none}.shot img,.sample-image img{transition:none}}
+
+
+/* Footer quick actions: Contact link plus a pill Resume button beside it. */
+.footer .footer-resume{display:inline-flex;align-items:center;background:var(--accent);color:#fff;border-radius:999px;padding:.5rem 1rem;margin-left:.7rem;font-weight:600;text-decoration:none;box-shadow:0 8px 20px rgba(36,42,70,.18)}
+.footer .footer-resume:hover{background:var(--signal);color:#fff}
