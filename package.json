@@ -1,0 +1,1 @@
+{"name":"anthony-casso-portfolio","version":"2.0.0","private":true,"scripts":{"check":"python3 scripts/check.py && node --check site.js","lint":"python3 scripts/check.py && node --check site.js","build":"python3 scripts/build.py","dev":"python3 -m http.server 4173 --bind 127.0.0.1"}}
