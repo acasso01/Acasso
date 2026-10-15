@@ -7,3 +7,20 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.project-card:hover,.btn:hover{transform:none}}
 
 .hardware-thumb{float:right;width:88px;height:88px;object-fit:cover;border-radius:10px;border:1px solid #365071;margin-left:15px}.hardware-thumb+.mini-icon{padding-top:8px}
+
+/* Authentic application screenshots: full frames in galleries, compact previews in project cards. */
+.app-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;align-items:start}
+.ant-gallery{grid-template-columns:repeat(3,minmax(0,1fr));max-width:1000px;margin-inline:auto}
+.app-shot{margin:0;min-width:0;background:linear-gradient(145deg,#15233a,#0e1624);border:1px solid #2e425e;border-radius:18px;padding:14px;overflow:hidden}
+.app-shot>a{display:block;max-width:270px;margin:auto;border-radius:22px;overflow:hidden;border:1px solid #354153;background:#08090c;transition:transform .2s}
+.app-shot>a:hover{transform:translateY(-3px)}
+.app-shot img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+.app-shot figcaption{padding:24px 5px 5px}.app-shot h3{font-size:18px;letter-spacing:-.02em;line-height:1.3;margin-bottom:10px}.app-shot p{font-size:12px;line-height:1.8;margin-bottom:14px}.app-shot figcaption a{font-size:11px;color:var(--cyan)}
+.screenshot-note{font-size:12px;max-width:760px;margin:28px auto 0;text-align:center}
+.phone-pair{display:flex;align-items:flex-start;justify-content:center;gap:20px;margin-top:76px;transform:rotate(-5deg)}
+.project-art .phone-pair img{display:block;width:130px;height:283px;object-fit:cover;object-position:top;border-radius:17px;transform:none;border:1px solid #4b5d79;margin:0;box-shadow:10px 15px 30px #0006}
+.project-art .phone-pair img+img{margin-top:30px;transform:rotate(10deg)}
+.project-art:has(.phone-pair) .platforms{display:none}
+@media(max-width:1000px){.app-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.ant-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}.ant-gallery .app-shot{padding:9px}.ant-gallery .app-shot h3{font-size:16px}}
+@media(max-width:700px){.ant-gallery{grid-template-columns:1fr 1fr}.ant-gallery .app-shot:last-child{grid-column:1/-1;max-width:330px;width:100%;justify-self:center}.app-gallery{gap:16px}.app-shot{padding:10px}.app-shot figcaption{padding-top:18px}.app-shot h3{font-size:16px}}
+@media(max-width:420px){.app-gallery{grid-template-columns:1fr}.app-shot{max-width:340px;width:100%;margin-inline:auto}.ant-gallery .app-shot:last-child{grid-column:auto}.app-shot>a{max-width:240px}.phone-pair{gap:12px}.project-art .phone-pair img{width:120px;height:261px}}

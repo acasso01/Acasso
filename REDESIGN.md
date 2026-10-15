@@ -42,3 +42,6 @@ Review the preview and the `redesign/enterprise-ai-portfolio` branch. Confirm th
 
 ## Local development
 Run `npm run dev` and open the local URL. Run `npm run build` for a deployable `dist/` directory. The package has no third-party runtime dependencies. Python 3 and Node.js are required for checks/build scripts; Vercel uses the supplied configuration.
+
+## App screenshots added
+Anthony supplied actual iPhone screens for Ant Streams (Movies, Live TV, navigation) and IRON (Home, exercise library, detail, programs). Movie titles/artwork in the Movies screenshot are redacted before publication. Original unredacted movie assets are excluded from the repository and deployment. The screenshots document the actual iPhone UI without extending unverified native architecture claims.
