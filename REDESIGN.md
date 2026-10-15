@@ -32,7 +32,7 @@ No account credentials or provider playback was used. Image review found existin
 1. Career dates confirmed: Granite starts October 2026; Splendido ends October 2026. At Anthony’s request, the role is displayed without an incoming label, using month-level dates.
 2. GCU degree and enrollment confirmed by Anthony: Master of Science in Artificial Intelligence, beginning October 2026. Expected completion date is optional and not stated.
 3. Whether Network+ preparation and ongoing consulting are still current.
-4. Updated résumé reflecting Granite Construction and education. Current downloadable résumé is preserved as supplied.
+4. Updated résumé completed with Granite Construction, October dates, GCU AI study, and verified projects. The website download uses this revised PDF.
 5. Ant Streams iPhone Home, Movies, player controls, and Apple TV Home/guide screenshots, with provider details removed.
 6. IRON native iPhone repository or screenshots and distribution status, if it should be featured as native software.
 7. Any completed AI labs, with code and evaluation results, when available.
